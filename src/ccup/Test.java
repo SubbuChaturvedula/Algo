@@ -1,4 +1,4 @@
-package careercup;
+package ccup;
 
 import java.util.HashMap;
 import java.util.Map;
