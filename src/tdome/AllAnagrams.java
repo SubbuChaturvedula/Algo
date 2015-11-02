@@ -1,4 +1,4 @@
-package testdome;
+package tdome;
 
 import java.util.Collection;
 import java.util.HashSet;

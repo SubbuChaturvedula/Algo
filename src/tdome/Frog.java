@@ -1,4 +1,4 @@
-package testdome;
+package tdome;
 
 public class Frog {
 
