@@ -25,6 +25,9 @@ $RECYCLE.BIN/
 # =========================
 
 .DS_Store
+
+.classpath
+.project
 .AppleDouble
 .LSOverride
 
