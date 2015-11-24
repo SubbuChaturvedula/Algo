@@ -17,7 +17,7 @@ public class DuplicateInArray {
 
 	public static void findDuplicate(int a[]){
 		Map<Integer,Integer>map=new HashMap<Integer,Integer>();
-		int max=0,value=0;
+		int max=0,value=0,maxim=0;
 		for(int i=0;i<a.length;i++){
 			Integer count=map.get(a[i])==null?0:map.get(a[i]);
 			map.put(a[i], count+1);	
