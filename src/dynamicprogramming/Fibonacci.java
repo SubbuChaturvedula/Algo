@@ -19,14 +19,14 @@ public class Fibonacci {
 
 	}
 
-	public static int fibDP(int x) {
-		int[] fb = new int[x + 1];
-		fb[0] = 0;
-		fb[1] = 1;
-		for (int i = 2; i < x + 1; i++) {
-			fb[i] = fb[i - 1] + fb[i - 2];
+	public static int fibDP(int n) {
+		int[] fib = new int[n + 1];
+		fib[0] = 0;
+		fib[1] = 1;
+		for (int i = 2; i < n + 1; i++) {
+			fib[i] = fib[i - 1] + fib[i - 2];
 		}
-		return fb[x];
+		return fib[n];
 	}
 
 	public static int fibTopDown(int n) {
