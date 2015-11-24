@@ -7,19 +7,15 @@ public class MaxInBinaryTree {
 	// Max will the Max(root, max element in left subtree, max element in right subtree)
 	public int getMax(Node root) {
 		if (root != null) {
-			int max = max(root.data, getMax(root.left), getMax(root.right));
-			return max;
+			return max(root.data, getMax(root.left), getMax(root.right));
 		}
-
 		return 0;
 	}
 
 	public int max(int a, int b, int c) {
 		System.err.println(a + " " + b + " " + c);
-		int maximum = (Math.max(a, Math.max(b, c)));
-		return maximum;
+		return Math.max(a, Math.max(b, c));
 	}
-
 	public static void main(String[] args) {
 		Node root = new Node(1);
 		root.left = new Node(2);

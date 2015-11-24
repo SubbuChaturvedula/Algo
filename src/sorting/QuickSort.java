@@ -21,7 +21,8 @@ public class QuickSort {
 	private static int[] quickSort(int left, int right, int[] a) {
 		int i = left;
 		int j = right;
-		int pivot = a[(left + right) / 2];
+		int mid = left + (right - left) / 2;
+		int pivot = a[mid];
 		while (i <= j) {
 			while (a[i] < pivot) {
 				i++;

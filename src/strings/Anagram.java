@@ -21,16 +21,6 @@ public class Anagram {
 		return true;
 	}
 
-	// For example, returns `{b=3, c=1, a=2}` for the string "aabcbb"
-	public static Map<Character, Integer> frequencyMap(String str) {
-		Map<Character, Integer> map = new HashMap<Character, Integer>();
-		for (char c : str.toLowerCase().toCharArray()) {
-			Integer frequency = map.get(c);
-			map.put(c, frequency == null ? 1 : frequency + 1);
-		}
-		return map;
-	}
-
 	public static Map<Character, Integer> frequencyMap(String str1, String str2) {
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 		for (char c : str1.toLowerCase().toCharArray()) {

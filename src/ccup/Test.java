@@ -38,7 +38,7 @@ public class Test {
 		}
 
 		for (int k : b) {
-			System.err.print(k + " ");
+			// System.err.print(k + " ");
 		}
 
 	}
