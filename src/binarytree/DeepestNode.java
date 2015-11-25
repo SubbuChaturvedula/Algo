@@ -45,7 +45,7 @@ public class DeepestNode {
 	public static void find(Node root, int level, boolean left) {
 		if (root != null) {
 			find(root.left, ++level, true);
-			if (deepestLevel < level) {
+			if (left&&deepestLevel < level) {
 				deepestLevel = level;
 				value = root.data;
 			}
