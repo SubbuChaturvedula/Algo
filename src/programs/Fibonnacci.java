@@ -6,7 +6,7 @@ public class Fibonnacci {
 	static int sum = 0;
 
 	public static void main(String[] args) {
-
+		FibonnacciIterative();
 	}
 
 	public static void FibonnacciIterative() {
