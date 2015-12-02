@@ -1,7 +1,12 @@
 package linkedlist;
 
 import java.util.Hashtable;
+//Time Complexity : O(n)
+//Space Complexity : O(n)
 
+//Follow Up: If suppose addition buffer is not allowed then we have option but to 
+//check every node data against every other node data and if find duplicates, delete that node.
+//Time Complexity : O(n^2)
 public class RemoveDuplicates {
 	public static void main(String[] args) {
 		Node n = new Node(1);
