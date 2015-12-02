@@ -27,16 +27,21 @@ public class DeleteXAfterY {
 			return;
 		}
 		Node temp1 = head;
+
 		while (y > 1) { // since we need to one node prior before we start deleting
 			temp1 = temp1.next;
 			y--;
 		}
+		System.out.println("\n" + temp1.value);
 		Node temp2 = temp1;
+
 		x = x + 1;// since we need the next node,
 		while (x > 0 && temp1 != null) {
 			temp1 = temp1.next;
 			x--;
 		}
+		System.out.println("\n" + temp1.value);
+		System.out.println("\n" + temp2.value);
 		temp2.next = temp1;
 	}
 
