@@ -8,6 +8,9 @@ import java.util.Queue;
 
 import tree.Node;
 
+//Do the inorder tra­ver­sal and store all the alter­nate level nodes in an ArrayList.
+//Reverse the ArrayList
+//Do another inorder tra­ver­sal and place the reversed array list in the same order in which it was fetched in step one.
 public class ReverseAlternateLevelsBT {
 
 	private static List<Integer> list = new ArrayList<>();
