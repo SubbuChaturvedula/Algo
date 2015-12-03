@@ -9,7 +9,7 @@ import java.util.Queue;
 import tree.Node;
 
 //Time Complexity : O(N)
-public class SpiralPattern {
+public class SpiralPatternBT {
 
 	public static void main(String[] args) {
 		Node root = new Node(5);
