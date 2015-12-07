@@ -46,6 +46,7 @@ public class DiameterBinaryTree {
 		root.left.left.left = new Node(8);
 
 		DiameterBinaryTree d = new DiameterBinaryTree();
+		System.out.println("Height of Tree " + d.Diameter(root)[0]);
 		System.out.println("Diameter of Tree " + d.Diameter(root)[1]);
 	}
 }
