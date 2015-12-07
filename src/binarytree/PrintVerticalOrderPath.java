@@ -25,7 +25,7 @@ public class PrintVerticalOrderPath {
 
 	public static int vertical(Node root, int level, boolean left) {
 		if (root != null) {
-			level = vertical(root.right, ++level, true);
+			level = vertical(root.left, --level, false);
 			if (map.get(level) != null) {
 				List<Integer> list = map.get(level);
 				list.add(root.data);
@@ -35,7 +35,7 @@ public class PrintVerticalOrderPath {
 				list.add(root.data);
 				map.put(level, list);
 			}
-			vertical(root.left, --level, false);
+			vertical(root.right, ++level, true);
 			return level;
 		} else if (left) {
 			return --level;
