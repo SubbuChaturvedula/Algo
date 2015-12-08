@@ -2,6 +2,8 @@ package arrays;
 
 import tree.Node;
 
+//Given a Sorted Array, Con­vert it into its Balanced Binary search Tree
+//constructed tree won’t be balanced tree, it will be skewed tree and to per­form oper­a­tions on this tree will be O(n) not O(logn).
 public class SortedArrayToBST {
 
 	public static void main(String[] args) {
