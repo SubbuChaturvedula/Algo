@@ -3,14 +3,14 @@ package binarytree;
 public class NextSiblingPointer {
 
 	public static void main(String[] args) {
-		Node root = new Node(1);
-		root.left = new Node(2);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		root.right.left = new Node(6);
-		root.right.right = new Node(7);
-		Node n = provideSiblings(root);
+		BTNode root = new BTNode(1);
+		root.left = new BTNode(2);
+		root.right = new BTNode(3);
+		root.left.left = new BTNode(4);
+		root.left.right = new BTNode(5);
+		root.right.left = new BTNode(6);
+		root.right.right = new BTNode(7);
+		BTNode n = provideSiblings(root);
 		printLevel(n);
 		System.out.println("");
 		printLevel(n.left);
@@ -18,7 +18,7 @@ public class NextSiblingPointer {
 		printLevel(n.left.left);
 	}
 
-	public static void printLevel(Node root) {
+	public static void printLevel(BTNode root) {
 		while (root != null) {
 			System.out.print(" " + root.data);
 			root = root.nextSibling;
@@ -26,9 +26,11 @@ public class NextSiblingPointer {
 	}
 
 
-	public static Node provideSiblings(Node root) {
+	public static BTNode provideSiblings(BTNode root) {
 		if (root != null) {
-			if (root.left != null) {// check if left node is not null  make the left node's sibling points to the right node of root
+			if (root.left != null) {// check if left BTNode is not null make the
+									// left BTNode's sibling points to the right
+									// BTNode of root
 				root.left.nextSibling = root.right;
 			}
 			if (root.right != null) { // if root has right
@@ -44,13 +46,13 @@ public class NextSiblingPointer {
 	}
 }
 
-class Node {
+class BTNode {
 	int data;
-	Node left;
-	Node right;
-	Node nextSibling;
+	BTNode left;
+	BTNode right;
+	BTNode nextSibling;
 
-	public Node(int data) {
+	public BTNode(int data) {
 		this.data = data;
 	}
 }

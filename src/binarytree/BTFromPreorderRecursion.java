@@ -1,5 +1,7 @@
 package binarytree;
 
+import tree.Node;
+
 /*Solution to the problem is similar to isBST Max-Min Solution.
 
 Your root value can have any value between -∞ to + ∞, say it is 30 here, 
