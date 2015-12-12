@@ -47,7 +47,7 @@ public class InOrderSuccessorBST {
 		root.left.left.right.right = eight;
 		root.right.left = new Node(17);
 		root.right.right = new Node(25);
-		InOrderSuccessor b = new InOrderSuccessor();
+		InOrderSuccessorBST b = new InOrderSuccessorBST();
 		System.out.print(" Tree : ");
 		b.display(root);
 		System.out.println();
