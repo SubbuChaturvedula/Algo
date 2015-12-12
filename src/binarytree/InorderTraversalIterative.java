@@ -3,7 +3,9 @@ package binarytree;
 import java.util.Stack;
 
 import tree.Node;
-public class InorderIterative {
+
+//Binary Tree-Inorder Traversal — Non Recursive Approach
+public class InorderTraversalIterative {
 
 	public static void main(String[] args) {
 		Node root = new Node(1);
