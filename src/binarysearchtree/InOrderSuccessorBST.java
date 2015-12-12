@@ -1,5 +1,10 @@
 package binarysearchtree;
 
+/*Inorder Successor in Binary Search Tree without Using Parent link
+Objective: Given a Binary Search tree, find the inorder successor of a node.
+What is Inorder Successor: Inorder successor of a node is the next node in the 
+inorder traversal of the tree. For the last node in a tree, inorder successor will be NULL */
+//=========================================================================================================
 //Case 1 : If the x has a right child then its inorder successor will the left most element in the right sub tree of x.
 
 //Case 2: If the x doesn’t have a right child then its inorder successor will the 
@@ -8,6 +13,7 @@ package binarysearchtree;
 //while traveling whenever you go left , store the node and call it successor.
 
 //Case 3: if x is the right most node in the tree then its inorder successor will be NULL.
+//=========================================================================================================
 public class InOrderSuccessorBST {
 	public Node findInOrderSuccessor(Node root, Node x){
 		if(x.right!=null){
