@@ -6,12 +6,12 @@ public class LongestCommonSubString {
 		int[][] LCS = new int[A.length + 1][B.length + 1];
 		// if A is null then LCS of A, B =0
 		for (int i = 0; i <= B.length; i++) {
-			LCS[0][i] = 0;
+			 LCS[0][i] = 0;
 		}
 
 		// if B is null then LCS of A, B =0
 		for (int i = 0; i <= A.length; i++) {
-			LCS[i][0] = 0;
+			 LCS[i][0] = 0;
 		}
 
 		// fill the rest of the matrix
@@ -29,17 +29,18 @@ public class LongestCommonSubString {
 			for (int j = 0; j <= B.length; j++) {
 				if (result < LCS[i][j]) {
 					result = LCS[i][j];
-					System.err.println(LCS[i][j]);
 				}
+				System.out.print(LCS[i][j] + " ");
 			}
+			System.out.println();
 		}
 
 		return result;
 	}
 
 	public static void main(String[] args) {
-		String A = "tutorialhorizon";
-		String B = "dynamictutorialProgramming";
+		String A = "sam";
+		String B = "sam";
 		System.out.println("LCS length : " + find(A.toCharArray(), B.toCharArray()));
 	}
 }
