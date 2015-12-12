@@ -8,7 +8,7 @@ package binarysearchtree;
 //while traveling whenever you go left , store the node and call it successor.
 
 //Case 3: if x is the right most node in the tree then its inorder successor will be NULL.
-public class InOrderSuccessor {
+public class InOrderSuccessorBST {
 	public Node findInOrderSuccessor(Node root, Node x){
 		if(x.right!=null){
 			return leftMostTreeNode(x.right);
