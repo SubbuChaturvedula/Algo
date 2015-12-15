@@ -36,6 +36,20 @@ public class ReverseLinkedList {
 		head = previousNode;
 	}
 
+	public Node reverseRecursion(Node temp) {
+		if (temp == null) {
+			return null;
+		}
+		if (temp.next == null) {
+			head = temp;
+			return null;
+		}
+		reverseRecursion(temp.next);
+		System.out.println(temp.value);
+		temp.next.next = temp;
+		temp.next = null;
+		return head;
+	}
 	public static void main(String[] args) {
 		ReverseLinkedList list = new ReverseLinkedList();
 		Node head = new Node(1);
@@ -49,11 +63,11 @@ public class ReverseLinkedList {
 		list.insert(third);
 		list.insert(fourth);
 		// list.insert(fifth);
-		System.err.println("Elements before reversing :");
-		list.print();
-		System.err.println();
-		list.reverse();
-		System.err.println("Elements After reversing :");
-		list.print();
+		// System.err.println("Elements before reversing :");
+		// list.print();
+		// System.err.println();
+		list.reverseRecursion(head);
+		// System.err.println("Elements After reversing :");
+		// list.print();
 	}
 }
