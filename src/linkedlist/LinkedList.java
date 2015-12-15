@@ -41,23 +41,10 @@ public class LinkedList {
 	public void print() {
 		Node temp = head;
 		while (temp != null) {
-			System.err.print(temp.value + " ");
+			System.out.print(temp.value + " ");
 			temp = temp.next;
 		}
-		System.err.println();
-	}
-
-	/**
-	 * get middle element of linked list with two pointers in single pass
-	 */
-	public Node getMiddleElement(Node head) {
-		Node fastPointer = head;
-		Node slowPointer = head;
-		while (fastPointer != null && fastPointer.next != null) {
-			fastPointer = fastPointer.next.next;
-			slowPointer = slowPointer.next;
-		}
-		return slowPointer;
+		System.out.println();
 	}
 
 	/**
@@ -145,7 +132,7 @@ public class LinkedList {
 
 	public void printNthElement(Node head, int n) {
 		Node temp = head;
-		int length = 0;
+		int length = 1;
 		while (temp.next != null) {
 			if (length == n) {
 				System.out.println("Element at " + n + "th position is " + temp.value);
@@ -164,24 +151,11 @@ public class LinkedList {
 		if (node == null)
 			return;
 		printFromEnd(node.next);
-		System.err.println(node.value);
+		System.out.print(node.value + "->");
 	}
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
-		Node head = new Node(5);
-		Node second = new Node(6);
-		Node third = new Node(7);
-		Node fourth = new Node(1);
-		Node fifth = new Node(2);
-
-		// list.insert(head);
-		// list.insert(second);
-		// list.insert(third);
-		// list.insert(fourth);
-		// list.insert(fifth);
-
-		// list.insert(third);// looping 2 to 7
 
 		Node root = new Node(1);
 		Node two = new Node(2);
@@ -200,24 +174,27 @@ public class LinkedList {
 		list.insert(six);
 		list.insert(seven);
 		list.insert(eight);
-
 		// 8 t0 3
+		// list.insert(three);
 
-		list.insert(three);
+		// boolean loopExists = list.isLoopExists(root);
 
-		// boolean loopExists = list.isLoopExists(head);
-		Node node = list.startNodeOfLoop(root);
-		System.err.println(node.value);
-		// Node middle = list.getMiddleElement(head);
+		// Node node = list.startNodeOfLoop(root);
+		// System.err.println(node.value);
+
 		// Node middle = list.getMiddleElementUsingLength(head);
 		// System.err.println();
 		// System.err.println("Middle Element of linkedlist is " + middle.value);
+		list.print();
+		// Node nthElementFromEnd = list.getNthNodeFromEnd(root, 2);
+		// System.err.println("nthElementFromEnd of linkedlist is " +
+		// nthElementFromEnd.value);
 
-		// Node nthElementFromEnd = list.getNthNodeFromEnd(head, 2);
-		// System.err.println("nthElementFromEnd of linkedlist is " + nthElementFromEnd.value);
 
-		// list.printNthElement(head, 4);
-		// list.printFromEnd(head);
+		list.printNthElement(root, 7);
+		// System.out.println();
+		// System.out.println("Elements Printing From End :");
+		// list.printFromEnd(root);
 
 	}
 
