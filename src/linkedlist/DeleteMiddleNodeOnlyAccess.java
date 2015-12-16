@@ -28,8 +28,7 @@ public class DeleteMiddleNodeOnlyAccess {
 
 	public static void deleteOnlyAccessNode(Node mid) {
 		if (mid.next == null) {
-			return; // we cant delete the node if it is the last node in the
-					// linked list
+			return; // we cant delete the node if it is the last node in the linked list
 		}
 		Node temp = mid;
 		temp.value = temp.next.value;
