@@ -10,11 +10,11 @@ import java.util.Hashtable;
 public class RemoveDuplicates {
 	public static void main(String[] args) {
 		Node n = new Node(1);
-		n.next = new Node(2);
+		n.next = new Node(1);
 		n.next.next = new Node(2);
-		n.next.next.next = new Node(3);
-		n.next.next.next.next = new Node(4);
-		n.next.next.next.next.next = new Node(4);
+		n.next.next.next = new Node(2);
+		n.next.next.next.next = new Node(3);
+		n.next.next.next.next.next = new Node(2);
 		n.next.next.next.next.next.next = new Node(2);
 		display(n);
 		Node after = removeduplicates(n);
@@ -34,7 +34,7 @@ public class RemoveDuplicates {
 		if (head == null) {
 			return null;
 		}
-		Node curr = head.next;
+		Node curr = head;
 		Node prev = head;
 		int count = 0;
 		Hashtable<Integer, Integer> map = new Hashtable<Integer, Integer>();
