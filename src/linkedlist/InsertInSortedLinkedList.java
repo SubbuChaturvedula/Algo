@@ -16,6 +16,9 @@ public class InsertInSortedLinkedList extends LinkedList {
 		list.insert(third);
 		list.insert(fourth);
 		list.insert(fifth);
+		System.err.println("Before Inserting :");
+		list.printFromStart(head);
+		System.err.println("\nAfter Inserting Node 3:");
 		list.insertInSorted(head, three);
 		list.printFromStart(head);
 	}
@@ -23,7 +26,7 @@ public class InsertInSortedLinkedList extends LinkedList {
 	public void printFromStart(Node node) {
 		Node temp = node;
 		while (temp != null) {
-			System.err.println(temp.value);
+			System.err.print(temp.value + " ");
 			temp = temp.next;
 		}
 	}
