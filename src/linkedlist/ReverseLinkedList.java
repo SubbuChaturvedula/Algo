@@ -45,7 +45,6 @@ public class ReverseLinkedList {
 			return null;
 		}
 		reverseRecursion(temp.next);
-		System.out.println(temp.value);
 		temp.next.next = temp;
 		temp.next = null;
 		return head;
@@ -63,11 +62,11 @@ public class ReverseLinkedList {
 		list.insert(third);
 		list.insert(fourth);
 		// list.insert(fifth);
-		// System.err.println("Elements before reversing :");
-		// list.print();
-		// System.err.println();
+		System.err.println("Elements before reversing :");
+		list.print();
+		System.err.println();
 		list.reverseRecursion(head);
-		// System.err.println("Elements After reversing :");
-		// list.print();
+		System.err.println("Elements After reversing :");
+		list.print();
 	}
 }
