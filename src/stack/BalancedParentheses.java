@@ -8,7 +8,7 @@ public class BalancedParentheses {
 	public static void main(String args[]) {
 		// Scanner sc = new Scanner(System.in);
 		// int length = Integer.parseInt(sc.nextLine());
-		String inputArr[] = { "{[()]}", "{[(])}", "{{[[(())]]}}" };
+		String inputArr[] = { "{[()]}", "{[(])}", "{{[[(())]]}}" };//
 		// for (int i = 0; i < length; i++) {
 		// String stupid = sc.nextLine();
 		// System.out.println(checkBraces(stupid));
@@ -20,48 +20,42 @@ public class BalancedParentheses {
 		// sc.close();
 	}
 
-	static String checkBraces(String value) {
-		Stack<Character> specialCharStack = new Stack<Character>();
-		String response = "NO";
-		char tempChar;
-		Character[] openingBraces = { '[', '(', '{' };
-		Character[] closingBraces = { ']', ')', '}' };
-		List<Character> openingBracesList = Arrays.asList(openingBraces);
-		List<Character> closingBracesList = Arrays.asList(closingBraces);
-		if (value == null) {
-			return response;
-		} else if (value.length() == 0) {
-			response = "YES";
+	public static String checkBraces(String str) {
+		String result = "NO";
+		List<Character> openBraceList = Arrays.asList(new Character[] { '(', '[', '{' });
+		List<Character> closeBraceList = Arrays.asList(new Character[] { ')', ']', '}' });
+		Stack<Character> s = new Stack<Character>();
+		if (str == null) {
+			return result;
+		} else if (str.length() == 0) {
+			result = "YES";
 		} else {
-
-			for (int i = 0; i < value.length(); i++) {
-				tempChar = value.charAt(i);
-
-				if (openingBracesList.contains(tempChar)) {
-					specialCharStack.push(tempChar);
-				} else if (closingBracesList.contains(tempChar)) {
-					if (!specialCharStack.isEmpty()) {
-						if (tempChar == ')' && '(' != specialCharStack.pop()) {
-							return response;
-						} else if (tempChar == '}' && '{' != specialCharStack.pop()) {
-							return response;
-						} else if (tempChar == ']' && '[' != specialCharStack.pop()) {
-							return response;
+			for (int i = 0; i < str.length(); i++) {
+				char temp = str.charAt(i);
+				if (openBraceList.contains(temp)) {
+					s.push(temp);
+				} else if (closeBraceList.contains(temp)) {
+					if (!s.isEmpty()) {
+						if (temp == ')' && '(' != s.pop()) {
+							return result;
+						} else if (temp == ']' && '[' != s.pop()) {
+							return result;
+						} else if (temp == '}' && '{' != s.pop()) {
+							return result;
 						}
 					} else {
-						return response;
+						return result;
 					}
 				} else {
-					return response;
+					return result;
 				}
 			}
-
 		}
-		if (specialCharStack.isEmpty()) {
-			response = "YES";
-			return response;
+		if (s.isEmpty()) {
+			result = "YES";
+			return result;
 		} else {
-			return response;
+			return result;
 		}
 	}
 }
