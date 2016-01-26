@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Queue;
+import java.util.Stack;
 import java.util.TreeMap;
 
 import tree.Node;
@@ -24,6 +25,27 @@ public class TopView {
 		root.right.right = new Node(8);
 		topview(root, 0);
 		display();
+		topView(root);
+	}
+
+	public static void topView(Node root) {
+		Node curr = root;
+		Stack<Node> stack = new Stack<Node>();
+		while (curr != null) {
+			stack.push(curr);
+			curr = curr.left;
+		}
+
+		while (!stack.isEmpty()) {
+			Node node = stack.pop();
+			System.out.print(node.data + " ");
+		}
+
+		curr = root.right;
+		while (curr != null) {
+			System.out.print(curr.data + " ");
+			curr = curr.right;
+		}
 	}
 
 	public static void topview(Node root, int level) {
