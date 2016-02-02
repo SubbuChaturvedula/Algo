@@ -10,6 +10,12 @@ public class Node {
 		this.data = value;
 	}
 
+	public Node(Integer data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+
 	public Node(Node left, int value, Node right) {
 		this.data = value;
 		this.left = left;
