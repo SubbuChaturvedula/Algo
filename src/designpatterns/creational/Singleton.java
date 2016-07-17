@@ -1,12 +1,11 @@
-package designpatterns;
+package designpatterns.creational;
 
 
 public class Singleton {
 
 	private static volatile Singleton _instance;
 
-	private Singleton() {
-	}
+	private Singleton(){}
 	/**
 	 * * Double checked locking code on Singleton * @return Singleton instance
 	 */
