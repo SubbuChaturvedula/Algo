@@ -30,4 +30,19 @@ public class Pangram {
 		}
 		return "pangram ";
 	}
+
+	// easy approach
+	public static boolean isPangramString(String s) {
+		if (s.length() < 26)
+			return false;
+		else {
+			for (char ch = 'a'; ch <= 'z'; ch++) {
+				if (s.indexOf(ch) < 0) {
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
 }
