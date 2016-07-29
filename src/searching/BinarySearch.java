@@ -1,6 +1,6 @@
 package searching;
 
-
+///binary search is log(n)
 public class BinarySearch {
 
 	public static void main(String[] args) {
@@ -8,6 +8,8 @@ public class BinarySearch {
 		int data = 10;
 		int x=search(a, data);
 		System.err.println(data + " Found at index "+x);
+		// iterative
+		System.err.println(data + " Found at index " + binarySearch(a, data));
 	}
 
 	public static int search(int a[],int data){
@@ -25,5 +27,23 @@ public class BinarySearch {
 		}else {
 			return binarySearch(a, mid+1, high, data);
 		}
+	}
+
+	// Iterative Approach
+	public static int binarySearch(int[] a, int elementToBeSearched) {
+		int first = 0;
+		int last = a.length - 1;
+		while (first < last) {
+			int mid = first + (last - first) / 2;
+			if (elementToBeSearched < a[mid]) {
+				last = mid;
+			} else if (elementToBeSearched > a[mid]) {
+				first = mid + 1;
+			} else {
+				return mid;
+			}
+		}
+		return -1;
+
 	}
 }
