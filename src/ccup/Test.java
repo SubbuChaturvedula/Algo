@@ -1,46 +1,97 @@
 package ccup;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+public final class Test {
 
-public class Test {
-
-	public static void main(String[] args) {
-		int[] a = { 3, 4, 5, 9, 2, 1, 3 };
-		int b[] = new int[a.length];
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-
-		for (int i = 0, j = 1; j < a.length && i < j;) {
-			if (a[i] < a[j]) {
-				if (map.containsKey(a[i])) {
-					map.put(a[i], map.get(a[i]) + 1);
-				} else {
-					map.put(a[i], j);
-
-				}
-				j++;
-			}
-			if (a[i] > a[j]) {
-				if (map.containsKey(a[i])) {
-					map.put(a[i], map.get(a[i]));
-				} else {
-					map.put(a[i], i);
-				}
-
-				i++;
-			}
-
-		}
-
-		for (Entry<Integer, Integer> entry : map.entrySet()) {
-			System.err.println(entry.getKey() + "  " + entry.getValue());
-		}
-
-		for (int k : b) {
-			// System.err.print(k + " ");
-		}
-
+	private Test() {
 	}
 
+	private static void transpose(int[][] m) {
+
+		for (int i = 0; i < m.length; i++) {
+			for (int j = i; j < m[0].length; j++) {
+				int x = m[i][j];
+				m[i][j] = m[j][i];
+				m[j][i] = x;
+			}
+		}
+	}
+
+	public static void rotateByNinetyToLeft(int[][] m) {
+		// transpose
+		transpose(m);
+
+		// swap rows
+		for (int i = 0; i < m.length / 2; i++) {
+			for (int j = 0; j < m[0].length; j++) {
+				int x = m[i][j];
+				m[i][j] = m[m.length - 1 - i][j];
+				m[m.length - 1 - i][j] = x;
+			}
+		}
+	}
+
+	public static void rotateByNinetyToRight(int[][] m) {
+		// transpose
+		transpose(m);
+
+		// swap columns
+		for (int j = 0; j < m[0].length / 2; j++) {
+			for (int i = 0; i < m.length; i++) {
+				int x = m[i][j];
+				m[i][j] = m[i][m[0].length - 1 - j];
+				m[i][m[0].length - 1 - j] = x;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int[][] mEven = { { 1, 3 }, { 2, 4 } };
+
+		rotateByNinetyToLeft(mEven);
+
+		for (int i = 0; i < mEven.length; i++) {
+			for (int j = 0; j < mEven[0].length; j++) {
+				System.out.print(mEven[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("---------------------------------");
+
+		rotateByNinetyToRight(mEven);
+
+		for (int i = 0; i < mEven.length; i++) {
+			for (int j = 0; j < mEven[0].length; j++) {
+				System.out.print(mEven[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("---------------------------------");
+
+		int[][] mOdd = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+		rotateByNinetyToLeft(mOdd);
+
+		for (int i = 0; i < mOdd.length; i++) {
+			for (int j = 0; j < mOdd[0].length; j++) {
+				System.out.print(mOdd[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("---------------------------------");
+
+		rotateByNinetyToRight(mOdd);
+
+		for (int i = 0; i < mOdd.length; i++) {
+			for (int j = 0; j < mOdd[0].length; j++) {
+				System.out.print(mOdd[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("---------------------------------");
+
+	}
 }
